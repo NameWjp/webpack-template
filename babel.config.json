@@ -3,10 +3,17 @@
     [
       "@babel/env",
       {
-        "useBuiltIns": "usage",
-        "corejs": "3.12.1"
+        "useBuiltIns": false
       }
     ]
   ],
-  "sourceType": "unambiguous"
+  "sourceType": "unambiguous",
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": 3
+      }
+    ]
+  ]
 }

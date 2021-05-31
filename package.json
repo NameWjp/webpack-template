@@ -17,6 +17,7 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.14.3",
+    "@babel/plugin-transform-runtime": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.0",
@@ -40,6 +41,6 @@
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
-    "core-js": "^3.12.1"
+    "@babel/runtime-corejs3": "^7.14.0"
   }
 }
