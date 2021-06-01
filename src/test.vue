@@ -1,13 +1,12 @@
 <template>
   <div>
-    test 页面
+    异步组件页面
   </div>
 </template>
 
 <script>
 
 export default {
-  name: '',
   components: {},
   data() {
     return {};
