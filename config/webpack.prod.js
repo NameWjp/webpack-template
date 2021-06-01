@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const TerserPlugin = require('terser-webpack-plugin');
 const { merge } = require('webpack-merge');
 const path = require('path');
 
@@ -59,6 +60,9 @@ const webpackProdConfig = {
     minimize: true,
     minimizer: [
       new CssMinimizerPlugin(),
+      new TerserPlugin({
+        extractComments: false, // 不提取注释
+      }),
     ],
     splitChunks: {
       chunks: 'all',
