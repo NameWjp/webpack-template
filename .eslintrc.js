@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'airbnb-base',
+    'plugin:vue/vue3-recommended',
   ],
   parserOptions: {
     ecmaVersion: 12,
@@ -18,6 +19,7 @@ module.exports = {
     'max-len': 0,
     'import/prefer-default-export': 0,
     'import/extensions': 0,
+    'no-new': 0,
   },
   globals: {},
   settings: {

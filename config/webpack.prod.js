@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { merge } = require('webpack-merge');
 const path = require('path');
 
@@ -31,6 +32,20 @@ const webpackProdConfig = {
           'postcss-loader',
         ],
       },
+      {
+        test: /\.s[ac]ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+            },
+          },
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
     ],
   },
   plugins: [
@@ -48,15 +63,20 @@ const webpackProdConfig = {
     splitChunks: {
       chunks: 'all',
       cacheGroups: {
-        elementUI: {
-          name: 'chunk-elementUI',
-          priority: 30,
-          test: /[\\/]node_modules[\\/]_?element-ui(.*)/,
+        corejs: {
+          name: 'chunk-corejs',
+          priority: 40,
+          test: /[\\/]core-js.+[\\/]/,
         },
         vue: {
           name: 'chunk-vue',
+          priority: 30,
+          test: /[\\/]node_modules[\\/]@?vue(.*)/,
+        },
+        elementPlus: {
+          name: 'chunk-element-plus',
           priority: 20,
-          test: /[\\/]node_modules[\\/]_?vue(.*)/,
+          test: /[\\/]node_modules[\\/]_?element-plus(.*)/,
         },
         libs: {
           name: 'chunk-libs',
@@ -83,5 +103,18 @@ const webpackProdConfig = {
     maxAssetSize: 512000,
   },
 };
+
+if (process.env.BUILD_ANALY === 'true') {
+  if (!webpackProdConfig.plugins) {
+    webpackProdConfig.plugins = [];
+  }
+  webpackProdConfig.plugins.push(
+    new BundleAnalyzerPlugin(
+      {
+        analyzerPort: 8888,
+      },
+    ),
+  );
+}
 
 module.exports = merge(webpackCommonConfig, webpackProdConfig);

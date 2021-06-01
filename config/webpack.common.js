@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const EslintWebpackPlugin = require('eslint-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 const path = require('path');
 const fs = require('fs');
 const dotenv = require('dotenv');
@@ -54,9 +55,14 @@ const webpackCommonConfig = {
       extensions: ['.js', '.json', '.vue'],
       files: ['src'],
     }),
+    new VueLoaderPlugin(),
   ],
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        use: 'vue-loader',
+      },
       {
         test: /\.js$/,
         // 忽略从 core-js 自动导入的依赖包
