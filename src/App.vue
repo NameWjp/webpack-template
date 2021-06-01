@@ -5,7 +5,7 @@
       type="primary"
       @click="handleShowTest"
     >
-      展示异步组件22
+      展示异步组件
     </el-button>
     <div v-if="show">
       <test />
