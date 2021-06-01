@@ -16,6 +16,7 @@ const webpackProdConfig = {
     path: paths.build,
     publicPath: paths.publicPath,
     filename: 'static/js/[name].[contenthash].js',
+    chunkFilename: 'static/js/chunk-[name].[contenthash].js',
     clean: true,
   },
   module: {

@@ -18,6 +18,7 @@ const webpackDevConfig = {
     path: paths.build,
     publicPath: '/',
     filename: '[name].js',
+    chunkFilename: '[name].js',
   },
   devServer: {
     historyApiFallback: true,

@@ -1,19 +1,14 @@
 <template>
   <div>
-    这是个 vue 测试页面
-    <el-button type="primary">
-      主要按钮
-    </el-button>
-    <test />
+    test 页面
   </div>
 </template>
 
 <script>
 
 export default {
-  components: {
-    test: () => import('./test'),
-  },
+  name: '',
+  components: {},
   data() {
     return {};
   },
