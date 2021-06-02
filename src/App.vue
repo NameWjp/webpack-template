@@ -1,12 +1,12 @@
 <template>
   <div class="test">
     这是个 vue 测试页面
-    <el-button
+    <button
       type="primary"
       @click="handleShowTest"
     >
       展示异步组件
-    </el-button>
+    </button>
     <div v-if="show">
       <test />
     </div>
@@ -35,6 +35,7 @@ export default {
 
 <style scoped lang="scss">
 .test {
+  color: red;
   transition: all 1s;
 }
 </style>
