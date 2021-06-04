@@ -10,7 +10,7 @@ const webpackDevConfig = {
   mode: 'development',
   devtool: 'eval-cheap-module-source-map',
   /**
-   * 在有 .browserslistrc 文件时，必须要指定 target，不然 webpack-dev-server 无法识别环境（真尼玛坑爹）
+   * 在有 .browserslistrc 文件时，必须要指定 target，不然 webpack-dev-server 无法识别环境
    * 详见：https://github.com/webpack/webpack-dev-server/issues/2758
   */
   target: 'web',

@@ -1,6 +1,6 @@
 # webpack-template
 
-> 一个 webpack5 的模板，内置了 vue3 的支持（引入的 element-plus 与 vue-loader 貌似有冲突，待修复）
+> 一个 webpack5 的模板，内置了 vue3 的支持
 
 ## 开发/构建
 

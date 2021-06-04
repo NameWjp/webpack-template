@@ -1,12 +1,12 @@
 <template>
   <div class="test">
     这是个 vue 测试页面
-    <button
+    <el-button
       type="primary"
       @click="handleShowTest"
     >
       展示异步组件
-    </button>
+    </el-button>
     <div v-if="show">
       <test />
     </div>
