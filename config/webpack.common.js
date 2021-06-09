@@ -66,7 +66,9 @@ const webpackCommonConfig = {
       {
         test: /\.js$/,
         // 忽略从 core-js 自动导入的依赖包
-        exclude: /[\\/]core-js.+[\\/]/,
+        // exclude: /[\\/]core-js.+[\\/]/,
+        // 忽略从 node_modules 导入的依赖包
+        exclude: /[\\/]node_modules[\\/]/,
         use: {
           loader: 'babel-loader',
           options: {
