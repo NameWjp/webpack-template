@@ -13,7 +13,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'import/no-extraneous-dependencies': ['off', { devDependencies: false }],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'no-console': 1,
     'no-unused-vars': 1,
     'max-len': 0,
