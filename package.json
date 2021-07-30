@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.14.0",
-    "element-plus": "^1.0.2-beta.46",
+    "element-plus": "^1.0.2-beta.65",
     "vue": "^3.0.11"
   }
 }
