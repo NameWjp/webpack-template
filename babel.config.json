@@ -3,7 +3,13 @@
     [
       "@babel/env",
       {
-        "useBuiltIns": false
+        // 对于业务项目，useBuiltIns 可设置为 usage，自动引入 polyfill 到全局
+        // 对于库开发者，useBuiltIns 可设置为 false，防止 polyfill 污染全局
+        "useBuiltIns": "usage",
+        "corejs": {
+          "version": "3.25",
+          "proposals": true
+        }
       }
     ]
   ],
@@ -11,8 +17,10 @@
   "plugins": [
     [
       "@babel/plugin-transform-runtime",
+      // 对于业务项目，corejs 设置为 false，使用 @babel/env 提供的全局 corejs 即可
+      // 对于库开发者，corejs 设置为 { version: 3, proposals: true }，动态引入不污染全局的 polyfill
       {
-        "corejs": 3
+        "corejs": false
       }
     ]
   ]
