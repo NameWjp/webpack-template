@@ -11,5 +11,5 @@ module.exports = {
   public: path.resolve(__dirname, '../public'),
 
   // publicPath 静态资源前缀
-  publicPath: '/',
+  publicPath: './',
 };
